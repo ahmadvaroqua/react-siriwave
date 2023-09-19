@@ -18,6 +18,7 @@ export declare type IReactSiriwaveProps = {
   lerpSpeed?: number
   curveDefinition?: SiriWave.ICurveDefinition[]
   onInit?: (siriwave: SiriWave.default) => void
+  id?: string
 }
 
 const ReactSiriwave = (props: IReactSiriwaveProps) => {
@@ -38,6 +39,7 @@ const ReactSiriwave = (props: IReactSiriwaveProps) => {
       pixelDepth: props.pixelDepth ?? 0.02,
       lerpSpeed: props.lerpSpeed ?? 0.01,
       curveDefinition: props.curveDefinition,
+      id: props.id ?? ''
     })
 
     if (typeof props.onInit === 'function') props.onInit(siriwave)
@@ -58,6 +60,7 @@ const ReactSiriwave = (props: IReactSiriwaveProps) => {
     props.speed,
     props.theme,
     props.width,
+    props.id,
     props,
   ])
   return <div ref={siriwaveRef}></div>
